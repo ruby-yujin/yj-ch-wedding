@@ -1,0 +1,52 @@
+export const heroImgSrc = [
+  {
+    src: "/hero/10.jpg",
+    alt: "Wedding couple"
+  }
+];
+
+export const profileImgSrc = [
+  {
+    src: "/profile/36.jpg",
+    alt: "Chang Hoon Lee"
+  },
+  {
+    src: "/profile/32.jpg",
+    alt: "Yujin Park"
+  }
+];
+
+export const galleryImgSrc = [
+  {
+    src: "/gallery/1.jpg",
+    alt: ""
+  },
+  {
+    src: "/gallery/5.jpg",
+    alt: ""
+  },
+  {
+    src: "/gallery/11.jpg",
+    alt: ""
+  },
+  {
+    src: "/gallery/15.jpg",
+    alt: ""
+  },
+  {
+    src: "/gallery/21.jpg",
+    alt: ""
+  },
+  {
+    src: "/gallery/24.jpg",
+    alt: ""
+  },
+  {
+    src: "/gallery/28.jpg",
+    alt: ""
+  },
+  {
+    src: "/gallery/31.jpg",
+    alt: ""
+  }
+];

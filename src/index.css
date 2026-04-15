@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@import "./theme.css";
+
+/* Tailwind 유틸 토큰 선언 */
+@theme {
+  --color-primary: #faf7f2; /* 화이트 */
+  --color-secondary: #e8e2d5; /* 그레이 */
+  --color-tertiary: #6b6375; /* 블랙 */
+}
+
+#root {
+  width: 768px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
