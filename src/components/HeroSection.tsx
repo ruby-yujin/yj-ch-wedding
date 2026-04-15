@@ -11,7 +11,7 @@ export function HeroSection() {
         />
         <div className="absolute bottom-32 left-0 right-0 text-center px-8">
           <h1
-            className="text-6xl mb-4 text-tertiary"
+            className="text-3xl mb-4 text-tertiary"
             style={{ fontFamily: "'Great Vibes', cursive" }}
           >
             Wedding Day
