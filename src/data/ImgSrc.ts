@@ -4,14 +4,20 @@ export const heroImgSrc = [
     alt: "Wedding couple"
   }
 ];
+export const greetingImgSrc = [
+  {
+    src: "/greeting/yujin_text.png",
+    alt: ""
+  }
+];
 
 export const profileImgSrc = [
   {
-    src: "/profile/36.jpg",
+    src: "/profile/ch.jpg",
     alt: "Chang Hoon Lee"
   },
   {
-    src: "/profile/32.jpg",
+    src: "/profile/yj.jpg",
     alt: "Yujin Park"
   }
 ];

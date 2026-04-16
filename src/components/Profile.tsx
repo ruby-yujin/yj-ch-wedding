@@ -2,7 +2,7 @@ import { profileImgSrc } from "../data/ImgSrc";
 
 export function Profile() {
   return (
-    <section className="w-full max-w-md mx-auto px-8 py-16">
+    <section className="w-full max-w-md mx-auto px-8 pb-16">
       <div className="grid grid-cols-2 gap-4">
         <div className="space-y-4">
           <img

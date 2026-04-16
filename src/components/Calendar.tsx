@@ -38,8 +38,7 @@ export function CalendarSection() {
           className={clsx(
             "aspect-square flex items-center justify-center",
             !isSameMonth(day, monthStart) && "text-muted-foreground/30",
-            isSameDay(day, weddingDate) &&
-              "bg-primary text-primary-foreground rounded-full"
+            isSameDay(day, weddingDate) && "bg-primary text-black rounded-full"
           )}
         >
           <span>{formattedDate}</span>

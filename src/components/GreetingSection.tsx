@@ -1,3 +1,5 @@
+import { greetingImgSrc } from "../data/ImgSrc";
+
 export function GreetingSection() {
   return (
     <section className="w-full max-w-md mx-auto px-8 py-16">
@@ -11,23 +13,23 @@ export function GreetingSection() {
         </p>
       </div>
 
-      <div className="flex justify-between items-center gap-4">
+      <div className="flex flex-col gap-4">
         <div className="">
-          <p className="mb-4 text-muted-foreground">신랑</p>
-          <p className="mb-6">이창훈</p>
-          <p className="leading-relaxed text-foreground/70 text-sm">
-            "사랑하는 사람과 평생을 약속하는 소중한 순간에 함께해 주셔서
-            진심으로 감사드립니다."
-          </p>
+          <img
+            src={greetingImgSrc[0].src}
+            alt={greetingImgSrc[0].alt}
+            className="w-full h-full object-cover"
+          />
+          <p className="mb-4 text-muted-foreground">신랑 이창훈</p>
         </div>
 
         <div className="">
-          <p className="mb-4 text-muted-foreground">신부</p>
-          <p className="mb-6">박유진</p>
-          <p className="leading-relaxed text-foreground/70 text-sm">
-            "사랑하는 사람과 평생을 약속하는 소중한 순간에 함께해 주셔서
-            진심으로 감사드립니다."
-          </p>
+          <img
+            src={greetingImgSrc[0].src}
+            alt={greetingImgSrc[0].alt}
+            className="w-full h-full object-cover"
+          />
+          <p className="mb-4 text-muted-foreground">신부 박유진</p>
         </div>
       </div>
     </section>
