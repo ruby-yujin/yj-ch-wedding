@@ -1,13 +1,24 @@
+import { SoundProvider } from "./store/sound";
+
 import { KakaoShareButton } from "./components/ShareButton";
 import { HeroSection } from "./components/HeroSection";
 import { GreetingSection } from "./components/GreetingSection";
 import { Profile } from "./components/Profile";
 import { CalendarSection } from "./components/Calendar";
 import { GallerySection } from "./components/Gallery";
+import { BgMusic } from "./components/BgMusic";
+import { MapSection } from "./components/MapSection";
+import { AccountSection } from "./components/AccountSection";
 
 type KakaoSdk = {
+  isInitialized: () => boolean;
+  init: (appKey: string) => void;
   Share: {
     sendDefault: (options: Record<string, unknown>) => void;
+    sendCustom: (options: {
+      templateId: number;
+      templateArgs?: Record<string, string>;
+    }) => void;
   };
 };
 
@@ -20,40 +31,29 @@ function App() {
       return;
     }
 
-    kakao.Share.sendDefault({
-      objectType: "feed",
-      content: {
-        title: "이창훈 💍 박유진, 결혼합니다.",
-        description: "2026년 10월 11일 일요일 보테가마지오 오후 3시 30분",
-        imageUrl: "https://yj-ch-wedding.vercel.app/hero/10.jpg",
-        link: {
-          mobileWebUrl: "https://yj-ch-wedding.vercel.app/",
-          webUrl: "https://yj-ch-wedding.vercel.app/"
-        }
-      },
-      buttons: [
-        {
-          title: "청첩장 보기",
-          link: {
-            mobileWebUrl: "https://yj-ch-wedding.vercel.app/",
-            webUrl: "https://yj-ch-wedding.vercel.app/"
-          }
-        }
-      ]
+    kakao.Share.sendCustom({
+      templateId: 132282,
+      templateArgs: {
+        title: "이창훈 & 박유진 결혼합니다",
+        description: "결혼식에 초대합니다"
+      }
     });
   };
 
   return (
-    <>
-      <div className="w-full max-w-md mx-auto px-8 pt-8">
-        <KakaoShareButton onClick={handleShare} />
-      </div>
+    <SoundProvider>
       <HeroSection />
       <GreetingSection />
       <Profile />
       <CalendarSection />
       <GallerySection />
-    </>
+      <MapSection />
+      <div className="w-full max-w-md mx-auto px-8 pt-8">
+        <KakaoShareButton onClick={handleShare} />
+      </div>
+      <AccountSection />
+      <BgMusic />
+    </SoundProvider>
   );
 }
 

@@ -17,7 +17,7 @@ export const profileImgSrc = [
     alt: "Chang Hoon Lee"
   },
   {
-    src: "/profile/yj.jpg",
+    src: "/profile/yj2.jpg",
     alt: "Yujin Park"
   }
 ];
@@ -53,6 +53,20 @@ export const galleryImgSrc = [
   },
   {
     src: "/gallery/31.jpg",
+    alt: ""
+  }
+];
+
+export const kakaoShareImgSrc = [
+  {
+    src: "/icons/kakao.png",
+    alt: ""
+  }
+];
+
+export const copyAddressImgSrc = [
+  {
+    src: "/icons/copy.png",
     alt: ""
   }
 ];

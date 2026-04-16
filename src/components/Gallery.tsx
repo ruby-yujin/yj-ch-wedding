@@ -28,7 +28,7 @@ export function GallerySection() {
         >
           {galleryImgSrc.map((img, index) => (
             <SwiperSlide key={index}>
-              <div className="aspect-3/4 w-full bg-black/2 flex items-center justify-center">
+              <div className="aspect-3/4 w-full flex items-center justify-center">
                 <img
                   src={img.src}
                   alt={img.alt}

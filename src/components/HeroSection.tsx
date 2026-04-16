@@ -9,10 +9,10 @@ export function HeroSection() {
           alt="Wedding couple"
           className="w-full h-auto object-contain"
         />
-        <div className="absolute bottom-32 left-0 right-0 text-center px-8">
+        <div className="absolute bottom-28 left-0 right-0 text-center px-8">
           <h1
-            className="text-3xl mb-4 text-tertiary"
-            style={{ fontFamily: "'Great Vibes', cursive" }}
+            className="text-[60px] mb-4 text-tertiary"
+            style={{ fontFamily: "'Cherolina', cursive" }}
           >
             Wedding Day
           </h1>
