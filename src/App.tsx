@@ -42,7 +42,7 @@ function App() {
 
   useEffect(() => {
     // 1. 두 손가락 확대(Pinch Zoom) 방지
-    const handleTouchStart = (e) => {
+    const handleTouchStart = (e: TouchEvent) => {
       if (e.touches.length > 1) {
         e.preventDefault();
       }
@@ -50,7 +50,7 @@ function App() {
 
     // 2. 더블 탭 확대 방지
     let lastTouchEnd = 0;
-    const handleTouchEnd = (e) => {
+    const handleTouchEnd = (e: TouchEvent) => {
       const now = new Date().getTime();
       if (now - lastTouchEnd <= 300) {
         e.preventDefault();
