@@ -1,5 +1,5 @@
+import { useEffect } from "react";
 import { SoundProvider } from "./store/sound";
-
 import { KakaoShareButton } from "./components/ShareButton";
 import { HeroSection } from "./components/HeroSection";
 import { GreetingSection } from "./components/GreetingSection";
@@ -39,6 +39,37 @@ function App() {
       }
     });
   };
+
+  useEffect(() => {
+    // 1. 두 손가락 확대(Pinch Zoom) 방지
+    const handleTouchStart = (e) => {
+      if (e.touches.length > 1) {
+        e.preventDefault();
+      }
+    };
+
+    // 2. 더블 탭 확대 방지
+    let lastTouchEnd = 0;
+    const handleTouchEnd = (e) => {
+      const now = new Date().getTime();
+      if (now - lastTouchEnd <= 300) {
+        e.preventDefault();
+      }
+      lastTouchEnd = now;
+    };
+
+    // 이벤트 리스너 등록 (passive: false여야 preventDefault가 작동함)
+    document.addEventListener("touchstart", handleTouchStart, {
+      passive: false
+    });
+    document.addEventListener("touchend", handleTouchEnd, false);
+
+    return () => {
+      // 컴포넌트 언마운트 시 클린업
+      document.removeEventListener("touchstart", handleTouchStart);
+      document.removeEventListener("touchend", handleTouchEnd);
+    };
+  }, []);
 
   return (
     <SoundProvider>
