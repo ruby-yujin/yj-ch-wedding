@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Copy, Check, ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import clsx from "clsx";
 
 interface AccountInfo {
@@ -56,24 +56,23 @@ export function AccountSection() {
 
   const AccountItem = ({ info, id }: { info: AccountInfo; id: string }) => (
     <div className="flex items-center justify-between p-4 bg-secondary/30 rounded-lg">
-      <div className="flex-1">
-        <p className="text-sm text-muted-foreground mb-1">
+      <div className="flex-1 text-left">
+        <p className="text-sm text-muted-foreground">
           {info.role} {info.name}
         </p>
-        <p className="mb-1">{info.bank}</p>
-        <p className="text-sm text-foreground/80">{info.account}</p>
+        <p className="flex items-center justify-between">
+          {info.bank} {info.account}{" "}
+          <button
+            onClick={() => handleCopy(info.account, id)}
+            className="p-3 rounded-lg transition-colors shrink-0"
+            aria-label="계좌번호 복사"
+          >
+            <span className="text-sm text-tertiary border border-tertiary rounded-lg px-2 py-1">
+              {copiedId === id ? "복사됨" : "복사"}
+            </span>
+          </button>
+        </p>
       </div>
-      <button
-        onClick={() => handleCopy(info.account, id)}
-        className="p-3 hover:bg-secondary rounded-lg transition-colors flex-shrink-0"
-        aria-label="계좌번호 복사"
-      >
-        {copiedId === id ? (
-          <Check className="w-5 h-5 text-green-600" />
-        ) : (
-          <Copy className="w-5 h-5 text-primary" />
-        )}
-      </button>
     </div>
   );
 

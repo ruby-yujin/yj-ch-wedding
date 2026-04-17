@@ -11,6 +11,11 @@ export function GreetingSection() {
           <br />
           사랑으로 하나되는 날 귀한 걸음 하시어 축복해 주시면 감사하겠습니다.
         </p>
+        <p className="flex flex-col justify-center items-center mb-4 text-muted-foreground text-left ">
+          이병재 · 황연자 아들 <strong>창훈</strong>
+          <br />
+          故박성홍 · 김복자 딸 <strong>유진</strong>
+        </p>
       </div>
 
       <div className="flex flex-col gap-4">
@@ -20,7 +25,8 @@ export function GreetingSection() {
             alt={greetingImgSrc[0].alt}
             className="w-full h-full object-cover"
           />
-          <p className="mb-4 text-muted-foreground">신랑 이창훈</p>
+
+          <p className="mb-4 text-muted-foreground">- 창훈 -</p>
         </div>
 
         <div className="">
@@ -29,7 +35,7 @@ export function GreetingSection() {
             alt={greetingImgSrc[0].alt}
             className="w-full h-full object-cover"
           />
-          <p className="mb-4 text-muted-foreground">신부 박유진</p>
+          <p className="mb-4 text-muted-foreground">- 유진 -</p>
         </div>
       </div>
     </section>
