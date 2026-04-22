@@ -35,7 +35,8 @@ function App() {
       templateId: 132282,
       templateArgs: {
         title: "이창훈 & 박유진 결혼합니다",
-        description: "결혼식에 초대합니다"
+        description: "결혼식에 초대합니다",
+        MAP_URL: "https://kko.to/U96dxg0Yl5"
       }
     });
   };
