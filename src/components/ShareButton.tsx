@@ -10,7 +10,7 @@ export function KakaoShareButton({
   label = "카카오톡 공유하기"
 }: KakaoShareButtonProps) {
   return (
-    <section className="w-full max-w-md mx-auto px-8 py-16">
+    <section className="w-full max-w-md mx-auto  pt-6">
       <button
         type="button"
         onClick={onClick}

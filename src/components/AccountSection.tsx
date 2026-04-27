@@ -34,13 +34,7 @@ export function AccountSection() {
       role: "신부",
       name: "박유진",
       bank: "카카오뱅크",
-      account: "3333-01-2345678"
-    },
-    {
-      role: "신부 모",
-      name: "김복자",
-      bank: "NH농협",
-      account: "352-0123-4567-89"
+      account: "3333-05-8854031"
     }
   ];
 
@@ -77,7 +71,7 @@ export function AccountSection() {
   );
 
   return (
-    <section className="w-full max-w-md mx-auto px-8 py-16">
+    <section className="w-full max-w-md mx-auto pt-20 px-8 pb-16">
       <div className="text-center mb-12">
         <div className="w-16 h-px bg-tertiary mx-auto mb-8" />
         <h2 className="text-tertiary">마음 전하실 곳</h2>
@@ -93,7 +87,7 @@ export function AccountSection() {
         <div className="bg-card rounded-lg overflow-hidden shadow-sm">
           <button
             onClick={() => setGroomOpen(!groomOpen)}
-            className="w-full p-6 flex items-center justify-between"
+            className="w-full p-4 flex items-center justify-between"
           >
             <h3 className="-text-tertiary">🤵🏻‍♂️신랑측 계좌번호</h3>
             {groomOpen ? (
@@ -121,7 +115,7 @@ export function AccountSection() {
         <div className="bg-card rounded-lg overflow-hidden shadow-sm">
           <button
             onClick={() => setBrideOpen(!brideOpen)}
-            className="w-full p-6 flex items-center justify-between"
+            className="w-full p-4 flex items-center justify-between"
           >
             <h3 className="-text-tertiary">👰🏻‍♀️신부측 계좌번호</h3>
             {brideOpen ? (

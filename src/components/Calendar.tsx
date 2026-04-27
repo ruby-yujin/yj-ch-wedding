@@ -14,6 +14,7 @@ import {
 import { ko } from "date-fns/locale";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import clsx from "clsx";
+import { calendarImgSrc } from "../data/ImgSrc";
 
 export function CalendarSection() {
   const weddingDate = new Date(2026, 9, 11);
@@ -59,8 +60,16 @@ export function CalendarSection() {
       <div className="text-center mb-12">
         <div className="w-16 h-px bg-tertiary mx-auto mb-8" />
         <h2 className="text-tertiary">Wedding Day</h2>
+        <div className="my-6 text-center">
+          <span className="block w-8 h-8 mx-auto">
+            <img src={calendarImgSrc[0].src} alt="" className="opacity-0.7" />
+          </span>
+          <p className="text-md mt-4 text-tertiary">
+            축하 화환은 정중히 사양합니다.
+            <br /> 마음으로 축복해 주시면 감사하겠습니다
+          </p>
+        </div>
       </div>
-
       <div className="bg-card rounded-lg p-6 shadow-sm">
         <div className="flex items-center justify-between mb-6">
           <button
@@ -79,7 +88,6 @@ export function CalendarSection() {
             <ChevronRight className="w-5 h-5 text-tertiary" />
           </button>
         </div>
-
         <div className="grid grid-cols-7 gap-2 mb-4">
           {["일", "월", "화", "수", "목", "금", "토"].map((day) => (
             <div
@@ -90,9 +98,7 @@ export function CalendarSection() {
             </div>
           ))}
         </div>
-
         <div className="space-y-2">{rows}</div>
-
         <div className="mt-8 text-center">
           <p className="text-foreground/80 mb-2">
             2026년 10월 11일 일요일 오후 3시 30분

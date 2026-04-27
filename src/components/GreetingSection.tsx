@@ -31,8 +31,8 @@ export function GreetingSection() {
 
         <div className="">
           <img
-            src={greetingImgSrc[0].src}
-            alt={greetingImgSrc[0].alt}
+            src={greetingImgSrc[1].src}
+            alt={greetingImgSrc[1].alt}
             className="w-full h-full object-cover"
           />
           <p className="mb-4 text-muted-foreground">- 유진 -</p>

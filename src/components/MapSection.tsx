@@ -6,6 +6,11 @@ const VENUE_POSITION = {
   lat: 37.5457261,
   lng: 127.0423333
 };
+// 지도의 중심만 오른쪽으로 이동 (값은 화면 보면서 조정)
+const MAP_CENTER = {
+  lat: VENUE_POSITION.lat,
+  lng: VENUE_POSITION.lng + 0.0018
+};
 
 export function MapSection() {
   const appKey = import.meta.env.VITE_KAKAO_MAP_APP_KEY ?? "";
@@ -77,25 +82,25 @@ export function MapSection() {
   };
 
   return (
-    <section className="w-full max-w-md mx-auto px-8 py-16">
-      <div className="text-center mb-8">
+    <section className="w-full  mx-auto pt-16">
+      <div className="max-w-md text-center mb-8 mx-auto">
         <div className="w-16 h-px bg-tertiary mx-auto mb-8" />
         <h2 className="text-tertiary">Location</h2>
       </div>
 
-      <div className="overflow-hidden rounded-lg border border-border">
+      <div className="overflow-hidden border border-border">
         <Map
-          center={VENUE_POSITION}
-          style={{ width: "100%", height: "320px" }}
-          level={2}
+          center={MAP_CENTER}
+          style={{ width: "100%", height: "340px" }}
+          level={4}
         >
           <MapMarker position={VENUE_POSITION} />
         </Map>
       </div>
-      <div className="flex flex-col gap-2 mt-5 text-start">
+      <div className="max-w-md  mx-auto  flex flex-col gap-2 mt-5 px-8 text-start">
         <h3>주소</h3>
         <p className="mb-2">
-          {addressText}
+          {addressText} 보테가마지오
           <br /> 갤러리아포레 B2층
           <button
             type="button"
