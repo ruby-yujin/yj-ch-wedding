@@ -32,14 +32,6 @@ export const profileImgSrc = [
 
 export const galleryImgSrc = [
   {
-    src: "/gallery/1.jpg",
-    alt: ""
-  },
-  {
-    src: "/gallery/2.jpg",
-    alt: ""
-  },
-  {
     src: "/gallery/3.jpg",
     alt: ""
   },
@@ -51,10 +43,7 @@ export const galleryImgSrc = [
     src: "/gallery/5.jpg",
     alt: ""
   },
-  // {
-  //   src: "/gallery/6.jpg",
-  //   alt: ""
-  // },
+
   {
     src: "/gallery/7.jpg",
     alt: ""
@@ -79,10 +68,7 @@ export const galleryImgSrc = [
     src: "/gallery/12.jpg",
     alt: ""
   },
-  {
-    src: "/gallery/13.jpg",
-    alt: ""
-  },
+
   {
     src: "/gallery/14.jpg",
     alt: ""
@@ -104,14 +90,6 @@ export const galleryImgSrc = [
     alt: ""
   },
   {
-    src: "/gallery/19.jpg",
-    alt: ""
-  },
-  {
-    src: "/gallery/20.jpg",
-    alt: ""
-  },
-  {
     src: "/gallery/21.jpg",
     alt: ""
   },
@@ -119,10 +97,6 @@ export const galleryImgSrc = [
     src: "/gallery/22.jpg",
     alt: ""
   },
-  // {
-  //   src: "/gallery/23.jpg",
-  //   alt: ""
-  // },
   {
     src: "/gallery/24.jpg",
     alt: ""
@@ -137,10 +111,6 @@ export const galleryImgSrc = [
   },
   {
     src: "/gallery/27.jpg",
-    alt: ""
-  },
-  {
-    src: "/gallery/28.jpg",
     alt: ""
   },
   {
@@ -161,10 +131,6 @@ export const galleryImgSrc = [
   },
   {
     src: "/gallery/33.jpg",
-    alt: ""
-  },
-  {
-    src: "/gallery/34.jpg",
     alt: ""
   },
   {
