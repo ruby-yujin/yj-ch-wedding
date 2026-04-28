@@ -39,7 +39,7 @@ export function CalendarSection() {
           className={clsx(
             "aspect-square flex items-center justify-center",
             !isSameMonth(day, monthStart) && "text-muted-foreground/30",
-            isSameDay(day, weddingDate) && "bg-primary text-black rounded-full"
+            isSameDay(day, weddingDate) && "bg-tertiary text-white rounded-full"
           )}
         >
           <span>{formattedDate}</span>
@@ -62,9 +62,9 @@ export function CalendarSection() {
         <h2 className="text-tertiary">Wedding Day</h2>
         <div className="my-6 text-center">
           <span className="block w-8 h-8 mx-auto">
-            <img src={calendarImgSrc[0].src} alt="" className="opacity-0.7" />
+            <img src={calendarImgSrc[0].src} alt="" className="opacity-0.6" />
           </span>
-          <p className="text-md mt-4 text-tertiary">
+          <p className="text-sm mt-4 text-tertiary">
             축하 화환은 정중히 사양합니다.
             <br /> 마음으로 축복해 주시면 감사하겠습니다
           </p>

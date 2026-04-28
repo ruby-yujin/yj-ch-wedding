@@ -24,15 +24,21 @@ export function GallerySection() {
           onSlideChange={(currentSwiper) =>
             setActiveIndex(currentSwiper.activeIndex)
           }
-          className="rounded-lg overflow-hidden gallery-swiper"
+          className="overflow-hidden gallery-swiper"
         >
           {galleryImgSrc.map((img, index) => (
             <SwiperSlide key={index}>
               <div className="aspect-3/4 w-full flex items-center justify-center">
                 <img
                   src={img.src}
-                  alt={img.alt}
+                  alt={img.alt || `갤러리 이미지 ${index + 1}`}
                   className="w-full h-full object-contain"
+                  width={900}
+                  height={1200}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : "auto"}
+                  decoding="async"
+                  sizes="(max-width: 768px) 100vw, 768px"
                 />
               </div>
             </SwiperSlide>
@@ -40,7 +46,7 @@ export function GallerySection() {
         </Swiper>
       </div>
 
-      <div className="mt-4 grid grid-cols-4 gap-2">
+      <div className="mt-4 grid grid-cols-5 gap-2">
         {galleryImgSrc.map((img, index) => (
           <button
             key={index}
@@ -57,6 +63,11 @@ export function GallerySection() {
               src={img.src}
               alt={img.alt || `gallery-${index + 1}`}
               className="w-full h-full object-cover"
+              loading="lazy"
+              width={160}
+              height={160}
+              decoding="async"
+              sizes="64px"
             />
           </button>
         ))}

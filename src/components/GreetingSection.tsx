@@ -9,7 +9,8 @@ export function GreetingSection() {
         <p className="leading-relaxed text-foreground/80 mb-8">
           평생 서로의 곁을 지키며
           <br />
-          사랑으로 하나되는 날 귀한 걸음 하시어 축복해 주시면 감사하겠습니다.
+          사랑으로 하나되는 날 귀한 걸음 하시어 <br />
+          축복해 주시면 감사하겠습니다.
         </p>
         <p className="flex flex-col justify-center items-center mb-4 text-muted-foreground text-left ">
           이병재 · 황연자 아들 <strong>창훈</strong>

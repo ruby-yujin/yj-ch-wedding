@@ -61,7 +61,8 @@ export function MapSection() {
     );
   }
 
-  const addressText = "서울특별시 성동구 성수동1가 서울숲2길 32-14";
+  const addressText =
+    "서울특별시 성동구 성수동1가 서울숲2길 32-14 보테가마지오";
 
   const handleCopyAddress = async () => {
     try {
@@ -100,8 +101,7 @@ export function MapSection() {
       <div className="max-w-md  mx-auto  flex flex-col gap-2 mt-5 px-8 text-start">
         <h3>주소</h3>
         <p className="mb-2">
-          {addressText} 보테가마지오
-          <br /> 갤러리아포레 B2층
+          {addressText} 갤러리아포레 B2층
           <button
             type="button"
             onClick={handleCopyAddress}
