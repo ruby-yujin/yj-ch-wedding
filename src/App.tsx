@@ -9,6 +9,7 @@ import { GallerySection } from "./components/Gallery";
 import { BgMusic } from "./components/BgMusic";
 import { MapSection } from "./components/MapSection";
 import { AccountSection } from "./components/AccountSection";
+import { ScrollReveal } from "./components/ScrollReveal";
 
 type KakaoSdk = {
   isInitialized: () => boolean;
@@ -74,15 +75,29 @@ function App() {
   return (
     <SoundProvider>
       <HeroSection />
-      <GreetingSection />
-      <Profile />
-      <CalendarSection />
-      <GallerySection />
-      <MapSection />
-      <div className="w-full max-w-md mx-auto px-8">
-        <KakaoShareButton onClick={handleShare} />
-      </div>
-      <AccountSection />
+      <ScrollReveal>
+        <GreetingSection />
+      </ScrollReveal>
+      <ScrollReveal>
+        <Profile />
+      </ScrollReveal>
+      <ScrollReveal>
+        <CalendarSection />
+      </ScrollReveal>
+      <ScrollReveal>
+        <GallerySection />
+      </ScrollReveal>
+      <ScrollReveal>
+        <MapSection />
+      </ScrollReveal>
+      <ScrollReveal>
+        <div className="w-full max-w-md mx-auto px-8">
+          <KakaoShareButton onClick={handleShare} />
+        </div>
+      </ScrollReveal>
+      <ScrollReveal>
+        <AccountSection />
+      </ScrollReveal>
       <BgMusic />
     </SoundProvider>
   );

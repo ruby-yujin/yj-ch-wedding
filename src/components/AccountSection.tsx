@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
-import clsx from "clsx";
 
 interface AccountInfo {
   role: string;
@@ -10,8 +8,6 @@ interface AccountInfo {
 }
 
 export function AccountSection() {
-  const [groomOpen, setGroomOpen] = useState(false);
-  const [brideOpen, setBrideOpen] = useState(false);
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
   const groomAccounts: AccountInfo[] = [
@@ -22,7 +18,13 @@ export function AccountSection() {
       account: "110-123-456789"
     },
     {
-      role: "신랑 모",
+      role: "신랑 아버지",
+      name: "이병재",
+      bank: "신한은행",
+      account: "110-123-456789"
+    },
+    {
+      role: "신랑 어머니",
       name: "황연자",
       bank: "우리은행",
       account: "1002-234-567890"
@@ -35,6 +37,12 @@ export function AccountSection() {
       name: "박유진",
       bank: "카카오뱅크",
       account: "3333-05-8854031"
+    },
+    {
+      role: "신부 어머니",
+      name: "김복자",
+      bank: "우리은행",
+      account: "1002-635-761253"
     }
   ];
 
@@ -61,7 +69,7 @@ export function AccountSection() {
             className="p-3 rounded-lg transition-colors shrink-0"
             aria-label="계좌번호 복사"
           >
-            <span className="text-sm text-tertiary border border-tertiary rounded-lg px-2 py-1">
+            <span className="text-xs text-tertiary border border-tertiary rounded-lg px-2 py-1">
               {copiedId === id ? "복사됨" : "복사"}
             </span>
           </button>
@@ -83,59 +91,25 @@ export function AccountSection() {
       </div>
 
       <div className="space-y-4">
-        {/* 신랑측 */}
-        <div className="bg-card rounded-lg overflow-hidden shadow-sm">
-          <button
-            onClick={() => setGroomOpen(!groomOpen)}
-            className="w-full p-4 flex items-center justify-between"
-          >
-            <h3 className="-text-tertiary">🤵🏻‍♂️신랑측 계좌번호</h3>
-            {groomOpen ? (
-              <ChevronUp className="w-5 h-5 -text-tertiary" />
-            ) : (
-              <ChevronDown className="w-5 h-5 -text-tertiary" />
-            )}
-          </button>
-
-          <div
-            className={clsx(
-              "overflow-hidden transition-all duration-300",
-              groomOpen ? "max-h-[500px]" : "max-h-0"
-            )}
-          >
-            <div className="p-6 pt-0 space-y-3">
-              {groomAccounts.map((account, index) => (
-                <AccountItem key={index} info={account} id={`groom-${index}`} />
-              ))}
-            </div>
+        <div className="bg-card rounded-lg overflow-hidden">
+          <div className="p-4 pb-0">
+            <h3 className="text-tertiary">🤵🏻‍♂️신랑측 계좌번호</h3>
+          </div>
+          <div className="p-6 pt-4 space-y-3">
+            {groomAccounts.map((account, index) => (
+              <AccountItem key={index} info={account} id={`groom-${index}`} />
+            ))}
           </div>
         </div>
 
-        {/* 신부측 */}
-        <div className="bg-card rounded-lg overflow-hidden shadow-sm">
-          <button
-            onClick={() => setBrideOpen(!brideOpen)}
-            className="w-full p-4 flex items-center justify-between"
-          >
-            <h3 className="-text-tertiary">👰🏻‍♀️신부측 계좌번호</h3>
-            {brideOpen ? (
-              <ChevronUp className="w-5 h-5 -text-tertiary" />
-            ) : (
-              <ChevronDown className="w-5 h-5 -text-tertiary" />
-            )}
-          </button>
-
-          <div
-            className={clsx(
-              "overflow-hidden transition-all duration-300",
-              brideOpen ? "max-h-[500px]" : "max-h-0"
-            )}
-          >
-            <div className="p-6 pt-0 space-y-3">
-              {brideAccounts.map((account, index) => (
-                <AccountItem key={index} info={account} id={`bride-${index}`} />
-              ))}
-            </div>
+        <div className="bg-card rounded-lg overflow-hidden">
+          <div className="p-4 pb-0">
+            <h3 className="text-tertiary">👰🏻‍♀️신부측 계좌번호</h3>
+          </div>
+          <div className="p-6 pt-4 space-y-3">
+            {brideAccounts.map((account, index) => (
+              <AccountItem key={index} info={account} id={`bride-${index}`} />
+            ))}
           </div>
         </div>
       </div>
