@@ -25,13 +25,14 @@ export const profileImgSrc = [
     alt: "Chang Hoon Lee"
   },
   {
-    src: "/profile/yj2.jpg",
+    src: "/profile/yj.jpg",
     alt: "Yujin Park"
   }
 ];
 
 export const galleryImgSrc = Array.from({ length: 34 }, (_, i) => ({
   src: `/gallery/${i + 1}.avif`,
+  thumbSrc: `/gallery/thumbs/${i + 1}.avif`,
   alt: ""
 }));
 
@@ -52,6 +53,13 @@ export const copyAddressImgSrc = [
 export const calendarImgSrc = [
   {
     src: "/icons/flower.png",
+    alt: ""
+  }
+];
+
+export const wiseSayingImgSrc = [
+  {
+    src: "/wise/wise.jpg",
     alt: ""
   }
 ];

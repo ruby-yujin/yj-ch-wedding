@@ -60,9 +60,9 @@ export function CalendarSection() {
       <div className="text-center mb-12">
         <div className="w-16 h-px bg-tertiary mx-auto mb-8" />
         <h2 className="text-tertiary">Wedding Day</h2>
-        <div className="my-6 text-center">
+        <div className="mt-10 mb-14 text-center">
           <span className="block w-8 h-8 mx-auto">
-            <img src={calendarImgSrc[0].src} alt="" className="opacity-0.6" />
+            <img src={calendarImgSrc[0].src} alt="" className="opacity-40" />
           </span>
           <p className="text-sm mt-4 text-tertiary">
             축하 화환은 정중히 사양합니다.

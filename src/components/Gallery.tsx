@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
 import { ChevronLeft, ChevronRight, Minus, Plus } from "lucide-react";
@@ -17,8 +17,21 @@ export function GallerySection() {
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isThumbnailsExpanded, setIsThumbnailsExpanded] = useState(false);
+  const gallerySectionRef = useRef<HTMLElement | null>(null);
+  const wasExpandedRef = useRef(isThumbnailsExpanded);
 
   const hasMoreThumbnails = galleryImgSrc.length > VISIBLE_THUMBNAIL_COUNT;
+
+  // 썸네일 "접기"(expanded: true -> false) 동작 시, 갤러리 섹션 상단으로 부드럽게 스크롤.
+  useEffect(() => {
+    if (wasExpandedRef.current && !isThumbnailsExpanded) {
+      gallerySectionRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+    wasExpandedRef.current = isThumbnailsExpanded;
+  }, [isThumbnailsExpanded]);
 
   const renderThumbnail = (
     img: (typeof galleryImgSrc)[number],
@@ -36,20 +49,23 @@ export function GallerySection() {
       aria-label={`${index + 1}번째 사진 보기`}
     >
       <img
-        src={img.src}
+        src={img.thumbSrc}
         alt={img.alt || `gallery-${index + 1}`}
         className="w-full h-full object-cover"
         loading={index < VISIBLE_THUMBNAIL_COUNT ? "eager" : "lazy"}
         width={160}
         height={160}
         decoding="async"
-        sizes="64px"
+        sizes="(max-width: 448px) calc((100vw - 4rem - 1.5rem) / 4), 88px"
       />
     </button>
   );
 
   return (
-    <section className="w-full max-w-md mx-auto px-8 py-16">
+    <section
+      ref={gallerySectionRef}
+      className="w-full max-w-md mx-auto px-8 py-16"
+    >
       <div className="text-center mb-12">
         <div className="w-16 h-px bg-tertiary mx-auto mb-8" />
         <h2 className="text-tertiary">Gallery</h2>

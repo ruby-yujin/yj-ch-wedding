@@ -1,15 +1,19 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { SoundProvider } from "./store/sound";
 import { KakaoShareButton } from "./components/ShareButton";
 import { HeroSection } from "./components/HeroSection";
 import { GreetingSection } from "./components/GreetingSection";
 import { Profile } from "./components/Profile";
+import { Letter } from "./components/Letter";
 import { CalendarSection } from "./components/Calendar";
 import { GallerySection } from "./components/Gallery";
 import { BgMusic } from "./components/BgMusic";
 import { MapSection } from "./components/MapSection";
 import { AccountSection } from "./components/AccountSection";
 import { ScrollReveal } from "./components/ScrollReveal";
+
+import Footer from "./components/Footer";
 
 type KakaoSdk = {
   isInitialized: () => boolean;
@@ -24,6 +28,8 @@ type KakaoSdk = {
 };
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
   const handleShare = () => {
     const kakao = (window as Window & { Kakao?: KakaoSdk }).Kakao;
 
@@ -74,12 +80,25 @@ function App() {
 
   return (
     <SoundProvider>
-      <HeroSection />
+      {isLoading && (
+        <motion.div
+          className="fixed inset-0 z-9999 bg-black pointer-events-none"
+          initial={{ opacity: 0.6 }}
+          animate={{ opacity: 0 }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
+          onAnimationComplete={() => setIsLoading(false)}
+          aria-hidden
+        />
+      )}
+      <HeroSection animationReady={!isLoading} />
       <ScrollReveal>
         <GreetingSection />
       </ScrollReveal>
       <ScrollReveal>
         <Profile />
+      </ScrollReveal>
+      <ScrollReveal>
+        <Letter />
       </ScrollReveal>
       <ScrollReveal>
         <CalendarSection />
@@ -98,7 +117,11 @@ function App() {
       <ScrollReveal>
         <AccountSection />
       </ScrollReveal>
-      <BgMusic />
+      {/* <ScrollReveal>
+        <WiseSaying />
+      </ScrollReveal> */}
+      <BgMusic isLoading={isLoading} />
+      <Footer />
     </SoundProvider>
   );
 }

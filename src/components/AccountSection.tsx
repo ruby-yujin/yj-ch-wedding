@@ -20,14 +20,14 @@ export function AccountSection() {
     {
       role: "신랑 아버지",
       name: "이병재",
-      bank: "신한은행",
-      account: "110-123-456789"
+      bank: "농협",
+      account: "042-02-4076310"
     },
     {
       role: "신랑 어머니",
       name: "황연자",
-      bank: "우리은행",
-      account: "1002-234-567890"
+      bank: "국민은행",
+      account: "424-001011-18550"
     }
   ];
 
@@ -66,7 +66,7 @@ export function AccountSection() {
           {info.bank} {info.account}{" "}
           <button
             onClick={() => handleCopy(info.account, id)}
-            className="p-3 rounded-lg transition-colors shrink-0"
+            className="p-3 pr-0 rounded-lg transition-colors shrink-0"
             aria-label="계좌번호 복사"
           >
             <span className="text-xs text-tertiary border border-tertiary rounded-lg px-2 py-1">
@@ -95,7 +95,7 @@ export function AccountSection() {
           <div className="p-4 pb-0">
             <h3 className="text-tertiary">🤵🏻‍♂️신랑측 계좌번호</h3>
           </div>
-          <div className="p-6 pt-4 space-y-3">
+          <div className="pt-4 space-y-3">
             {groomAccounts.map((account, index) => (
               <AccountItem key={index} info={account} id={`groom-${index}`} />
             ))}
@@ -106,7 +106,7 @@ export function AccountSection() {
           <div className="p-4 pb-0">
             <h3 className="text-tertiary">👰🏻‍♀️신부측 계좌번호</h3>
           </div>
-          <div className="p-6 pt-4 space-y-3">
+          <div className=" pt-4 space-y-3">
             {brideAccounts.map((account, index) => (
               <AccountItem key={index} info={account} id={`bride-${index}`} />
             ))}
