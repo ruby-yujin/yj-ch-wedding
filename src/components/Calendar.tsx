@@ -65,8 +65,8 @@ export function CalendarSection() {
             <img src={calendarImgSrc[0].src} alt="" className="opacity-40" />
           </span>
           <p className="text-sm mt-4 text-tertiary">
-            축하 화환은 정중히 사양합니다.
-            <br /> 마음으로 축복해 주시면 감사하겠습니다
+            유일한 내 편을 만나 평생을 약속합니다.
+            <br />그 소중한 순간에 함께해 주세요.
           </p>
         </div>
       </div>
