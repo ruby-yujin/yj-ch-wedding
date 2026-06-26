@@ -78,3 +78,10 @@ export const navigationImgSrc = [
     alt: ""
   }
 ];
+
+export const kakaoPayIconSrc = [
+  {
+    src: "/icons/kakaopay.svg",
+    alt: ""
+  }
+];

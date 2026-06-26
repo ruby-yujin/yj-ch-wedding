@@ -99,7 +99,7 @@ export function MapSection() {
         </Map>
       </div>
       {/* 네이게이션 */}
-      <ul className="flex justify-center align-center gap-2 border border-border my-4">
+      <ul className="flex justify-center align-center gap-2 my-4">
         <li>
           <a
             href="nmap://route/car?dname=보테가마지오&dlat=37.54595&dlng=127.04353"
@@ -114,7 +114,8 @@ export function MapSection() {
             네이버 길찾기
           </a>
         </li>
-        <li>
+        <li className="flex items-center gap-2 px-2">
+          <span className="h-3 w-px shrink-0 bg-secondary" aria-hidden />
           <a
             href="tmap://route?goalname=보테가마지오&goalx=127.04353&goaly=37.54595"
             className="flex items-center gap-1 text-xs"
@@ -127,10 +128,11 @@ export function MapSection() {
             />
             티맵 길찾기
           </a>
+          <span className="h-3 w-px shrink-0 bg-secondary" aria-hidden />
         </li>
         <li>
           <a
-            href="https://map.kakao.com/link/to/보테가마지오,37.54595,127.04353"
+            href="https://map.kakao.com/link/to/133745576"
             className="flex items-center gap-1 text-xs "
           >
             <img

@@ -1,10 +1,14 @@
 import { useState } from "react";
+import { kakaoPayIconSrc } from "../data/ImgSrc";
 
 interface AccountInfo {
   role: string;
   name: string;
   bank: string;
   account: string;
+  isIcon: boolean;
+  icon?: React.ReactNode;
+  iconLink?: string;
 }
 
 export function AccountSection() {
@@ -15,19 +19,26 @@ export function AccountSection() {
       role: "신랑",
       name: "이창훈",
       bank: "기업은행",
-      account: "027-139563-01-011"
+      account: "027-139563-01-011",
+      isIcon: true,
+      icon: (
+        <img src={kakaoPayIconSrc[0].src} alt="카카오페이" className="w-12" />
+      ),
+      iconLink: "https://link.kakaopay.com/__/aE-yBNh"
     },
     {
       role: "신랑 아버지",
       name: "이병재",
       bank: "농협",
-      account: "042-02-4076310"
+      account: "042-02-4076310",
+      isIcon: false
     },
     {
       role: "신랑 어머니",
       name: "황연자",
       bank: "국민은행",
-      account: "424-001011-18550"
+      account: "424-001011-18550",
+      isIcon: false
     }
   ];
 
@@ -36,13 +47,19 @@ export function AccountSection() {
       role: "신부",
       name: "박유진",
       bank: "카카오뱅크",
-      account: "3333-05-8854031"
+      account: "3333-05-8854031",
+      isIcon: true,
+      icon: (
+        <img src={kakaoPayIconSrc[0].src} alt="카카오뱅크" className="w-12" />
+      ),
+      iconLink: "https://link.kakaopay.com/__/1IsKs4J"
     },
     {
       role: "신부 어머니",
       name: "김복자",
       bank: "우리은행",
-      account: "1002-635-761253"
+      account: "1002-635-761253",
+      isIcon: false
     }
   ];
 
@@ -59,8 +76,13 @@ export function AccountSection() {
   const AccountItem = ({ info, id }: { info: AccountInfo; id: string }) => (
     <div className="flex items-center justify-between p-4 bg-secondary/30 rounded-lg">
       <div className="flex-1 text-left">
-        <p className="text-sm text-muted-foreground">
-          {info.role} {info.name}
+        <p className="text-sm text-muted-foreground flex items-center gap-2">
+          {info.role} {info.name}{" "}
+          {info.isIcon && (
+            <a href={info.iconLink} target="_blank" rel="noopener noreferrer">
+              {info.icon}
+            </a>
+          )}
         </p>
         <p className="flex items-center justify-between">
           {info.bank} {info.account}{" "}
