@@ -63,3 +63,18 @@ export const wiseSayingImgSrc = [
     alt: ""
   }
 ];
+
+export const navigationImgSrc = [
+  {
+    src: "/map/naver.jpeg",
+    alt: ""
+  },
+  {
+    src: "/map/tmap.png",
+    alt: ""
+  },
+  {
+    src: "/map/kakao.png",
+    alt: ""
+  }
+];

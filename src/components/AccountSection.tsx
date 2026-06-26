@@ -14,8 +14,8 @@ export function AccountSection() {
     {
       role: "신랑",
       name: "이창훈",
-      bank: "신한은행",
-      account: "110-123-456789"
+      bank: "기업은행",
+      account: "027-139563-01-011"
     },
     {
       role: "신랑 아버지",

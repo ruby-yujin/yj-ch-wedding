@@ -1,6 +1,6 @@
 import { Map, MapMarker, useKakaoLoader } from "react-kakao-maps-sdk";
 import { useState } from "react";
-import { copyAddressImgSrc } from "../data/ImgSrc";
+import { copyAddressImgSrc, navigationImgSrc } from "../data/ImgSrc";
 
 const VENUE_POSITION = {
   lat: 37.5457261,
@@ -98,6 +98,51 @@ export function MapSection() {
           <MapMarker position={VENUE_POSITION} />
         </Map>
       </div>
+      {/* 네이게이션 */}
+      <ul className="flex justify-center align-center gap-2 border border-border my-4">
+        <li>
+          <a
+            href="nmap://route/car?dname=보테가마지오&dlat=37.54595&dlng=127.04353"
+            className="flex items-center gap-1 text-xs"
+          >
+            <img
+              src={navigationImgSrc[0].src}
+              alt="네이버지도"
+              width={28}
+              height={28}
+            />
+            네이버 길찾기
+          </a>
+        </li>
+        <li>
+          <a
+            href="tmap://route?goalname=보테가마지오&goalx=127.04353&goaly=37.54595"
+            className="flex items-center gap-1 text-xs"
+          >
+            <img
+              src={navigationImgSrc[1].src}
+              alt="티맵"
+              width={28}
+              height={28}
+            />
+            티맵 길찾기
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://map.kakao.com/link/to/보테가마지오,37.54595,127.04353"
+            className="flex items-center gap-1 text-xs "
+          >
+            <img
+              src={navigationImgSrc[2].src}
+              alt="카카오내비"
+              width={28}
+              height={28}
+            />
+            카카오 길찾기
+          </a>
+        </li>
+      </ul>
       <div className="max-w-md  mx-auto  flex flex-col gap-2 mt-5 px-8 text-start">
         <h3>주소</h3>
         <p className="mb-2">
