@@ -78,10 +78,17 @@ export function AccountSection() {
       <div className="flex-1 text-left">
         <p className="text-sm text-muted-foreground flex items-center gap-2">
           {info.role} {info.name}{" "}
-          {info.isIcon && (
-            <a href={info.iconLink} target="_blank" rel="noopener noreferrer">
+          {info.isIcon && info.iconLink && (
+            <button
+              type="button"
+              onClick={() => {
+                window.location.href = info.iconLink!;
+              }}
+              className="inline-flex"
+              aria-label={`${info.name} 카카오페이로 송금`}
+            >
               {info.icon}
-            </a>
+            </button>
           )}
         </p>
         <p className="flex items-center justify-between">
