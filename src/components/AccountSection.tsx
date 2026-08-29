@@ -30,7 +30,7 @@ export function AccountSection() {
       role: "신랑 아버지",
       name: "이병재",
       bank: "농협",
-      account: "042-02-4076310",
+      account: "042-02-076310",
       isIcon: false
     },
     {
